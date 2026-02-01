@@ -31,21 +31,39 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
 
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
-    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_EFFECT_SNAKE
-    #define RGBLIGHT_EFFECT_KNIGHT
-    #define RGBLIGHT_EFFECT_CHRISTMAS
-    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #define RGBLIGHT_EFFECT_RGB_TEST
-    #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
-    #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
+// RGB Matrix Configuration
+#ifdef RGB_MATRIX_ENABLE
+    // Brightness and step configuration
+    #undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+    #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+    #define RGB_MATRIX_HUE_STEP 8
+    #define RGB_MATRIX_SAT_STEP 8
+    #define RGB_MATRIX_VAL_STEP 8
+    #define RGB_MATRIX_SPD_STEP 10
+
+    // Enable specific effects - Reactive effects (respond to keypresses)
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE   // Pulses keys on press
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE          // Static color reacts to keypresses
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE     // Wider reactive effect
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE // Even wider reactive
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS    // Cross-shaped reactive effect
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS // Multiple crosses
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS    // Circular wave effect (THIS IS THE ONE!)
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS // Multiple circular waves
+    #define ENABLE_RGB_MATRIX_SPLASH                  // Color splash on keypress
+    #define ENABLE_RGB_MATRIX_MULTISPLASH            // Multiple color splashes
+    #define ENABLE_RGB_MATRIX_SOLID_SPLASH           // Single color splash
+    #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH      // Multiple solid splashes
+
+    // Some nice non-reactive effects
+    #define ENABLE_RGB_MATRIX_BREATHING              // Breathing animation
+    #define ENABLE_RGB_MATRIX_BAND_SPIRAL_VAL        // Spiral bands
+    #define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT       // Rainbow left to right
+    #define ENABLE_RGB_MATRIX_CYCLE_UP_DOWN          // Rainbow up to down
+    #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON // Rainbow chevron
+    #define ENABLE_RGB_MATRIX_CYCLE_PINWHEEL         // Pinwheel effect
+    #define ENABLE_RGB_MATRIX_TYPING_HEATMAP         // Heatmap based on typing
+    #define ENABLE_RGB_MATRIX_DIGITAL_RAIN           // Matrix-style rain
 #endif
 
-#define TAPPING_TERM 180
+#define TAPPING_TERM 175
